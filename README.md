@@ -24,6 +24,12 @@
 
 本実装では、ローカル文書を検索し、根拠に基づいて応答することで、軽量ローカルLLMの信頼性を補強します。
 
+## 構成図
+
+全体構成は以下を参照してください。
+
+- [docs/architecture_overview.md](docs/architecture_overview.md)
+
 ## 対象環境
 
 検証環境は以下です。

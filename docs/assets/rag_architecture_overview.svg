@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1280" height="900" viewBox="0 0 1280 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hierarchical Interval Cluster RAG architecture overview">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#34495e"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="900" fill="#f7f9fb"/>
+  <text x="640.0" y="48" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#1f2d3d" text-anchor="middle">
+    Hierarchical Interval Cluster RAG for Open-LLM-VTuber
+  </text>
+  <text x="640.0" y="82" font-family="Arial, sans-serif" font-size="17" fill="#52616f" text-anchor="middle">
+    RAG対象質問だけ通常LLMをスキップし、根拠付き回答を画面表示、短文だけをMioTTSへ送る構成
+  </text>
+
+  <g filter="url(#shadow)">
+    <rect x="25.0" y="124.0" width="210" height="92" rx="14" fill="#e8f4ff" stroke="#34495e" stroke-width="2"/>
+<text x="130" y="156.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">ユーザー入力</text>
+<text x="130" y="188.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">text-input / 音声入力</text>
+<text x="130" y="209.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">例: conf.yaml設定確認</text>
+    <rect x="265.0" y="124.0" width="230" height="92" rx="14" fill="#fff5db" stroke="#34495e" stroke-width="2"/>
+<text x="380" y="156.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">RAG使用判定</text>
+<text x="380" y="188.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">rag_gate.py</text>
+<text x="380" y="209.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">通常会話か根拠参照か判定</text>
+    <rect x="535.0" y="124.0" width="230" height="92" rx="14" fill="#e8ffe8" stroke="#34495e" stroke-width="2"/>
+<text x="650" y="156.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">通常会話</text>
+<text x="650" y="188.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">agent_engine.chat()</text>
+<text x="650" y="209.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">従来LLM + MioTTS</text>
+    <rect x="520.0" y="275.0" width="260" height="110" rx="14" fill="#ffecec" stroke="#34495e" stroke-width="2"/>
+<text x="650" y="307.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">RAG経路</text>
+<text x="650" y="339.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">chat_with_optional_rag()</text>
+<text x="650" y="360.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">通常LLMをスキップ</text>
+  </g>
+
+  <line x1="235" y1="170" x2="265" y2="170" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="495" y1="170" x2="535" y2="170" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="515.0" y="162.0" font-family="Arial, sans-serif" font-size="15" font-weight="normal" fill="#34495e" text-anchor="middle">RAG対象外</text>
+  <line x1="380" y1="220" x2="540" y2="300" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="460.0" y="252.0" font-family="Arial, sans-serif" font-size="15" font-weight="normal" fill="#34495e" text-anchor="middle">RAG対象</text>
+
+  <g filter="url(#shadow)">
+    <rect x="15.0" y="280.0" width="230" height="100" rx="14" fill="#eef0ff" stroke="#34495e" stroke-width="2"/>
+<text x="130" y="312.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">検索対象文書</text>
+<text x="130" y="344.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">rag_interval_cluster/docs/</text>
+<text x="130" y="365.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">conf.yaml / logs / md等</text>
+    <rect x="15.0" y="445.0" width="230" height="110" rx="14" fill="#eef0ff" stroke="#34495e" stroke-width="2"/>
+<text x="130" y="477.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">文書分割</text>
+<text x="130" y="509.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">document_loader.py</text>
+<text x="130" y="530.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">chunker.py</text>
+<text x="130" y="552.2" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">YAML構造を考慮</text>
+    <rect x="260.0" y="445.0" width="240" height="110" rx="14" fill="#eef0ff" stroke="#34495e" stroke-width="2"/>
+<text x="380" y="477.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">候補検索</text>
+<text x="380" y="509.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">embedder_tfidf.py</text>
+<text x="380" y="530.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">TF-IDF char n-gram</text>
+    <rect x="525.0" y="445.0" width="250" height="110" rx="14" fill="#eef0ff" stroke="#34495e" stroke-width="2"/>
+<text x="650" y="477.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">区間距離</text>
+<text x="650" y="509.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">interval_distance.py</text>
+<text x="650" y="530.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">query variants</text>
+<text x="650" y="552.2" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">interval=[low, high]</text>
+    <rect x="800.0" y="445.0" width="260" height="110" rx="14" fill="#eef0ff" stroke="#34495e" stroke-width="2"/>
+<text x="930" y="477.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">階層クラスタリング</text>
+<text x="930" y="509.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">hierarchical_cluster.py</text>
+<text x="930" y="530.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">代表チャンク選択</text>
+<text x="930" y="552.2" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">近隣チャンク展開</text>
+    <rect x="800.0" y="275.0" width="260" height="110" rx="14" fill="#eef0ff" stroke="#34495e" stroke-width="2"/>
+<text x="930" y="307.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">根拠プロンプト</text>
+<text x="930" y="339.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">prompt_builder.py</text>
+<text x="930" y="360.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">根拠クラスタ + 回答ルール</text>
+  </g>
+
+  <line x1="130" y1="380" x2="130" y2="445" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="245" y1="500" x2="260" y2="500" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="500" y1="500" x2="525" y2="500" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="775" y1="500" x2="800" y2="500" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="930" y1="445" x2="930" y2="385" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="780" y1="330" x2="800" y2="330" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <g filter="url(#shadow)">
+    <rect x="1020.0" y="275.0" width="220" height="110" rx="14" fill="#f4ecff" stroke="#34495e" stroke-width="2"/>
+<text x="1130" y="307.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">Ollama回答生成</text>
+<text x="1130" y="339.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">ollama_client.py</text>
+<text x="1130" y="360.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">tinyswallow-vtuber</text>
+<text x="1130" y="382.2" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">OpenAI互換API</text>
+    <rect x="805.0" y="645.0" width="250" height="120" rx="14" fill="#fff1e6" stroke="#34495e" stroke-width="2"/>
+<text x="930" y="677.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">回答整形・信頼度ガード</text>
+<text x="930" y="709.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">rag_answer.py</text>
+<text x="930" y="730.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">根拠なしは回答抑制</text>
+<text x="930" y="752.2" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">JSON風出力も整形</text>
+    <rect x="530.0" y="645.0" width="240" height="120" rx="14" fill="#fff1e6" stroke="#34495e" stroke-width="2"/>
+<text x="650" y="677.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">TTS短文化</text>
+<text x="650" y="709.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">rag_tts_text.py</text>
+<text x="650" y="730.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">全文は読まない</text>
+<text x="650" y="752.2" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">40字程度の1文</text>
+    <rect x="260.0" y="645.0" width="240" height="120" rx="14" fill="#e8f4ff" stroke="#34495e" stroke-width="2"/>
+<text x="380" y="677.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">Open-LLM-VTuber表示</text>
+<text x="380" y="709.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">full-textで全文表示</text>
+<text x="380" y="730.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">短文音声payload送信</text>
+    <rect x="20.0" y="645.0" width="220" height="120" rx="14" fill="#e8ffe8" stroke="#34495e" stroke-width="2"/>
+<text x="130" y="677.0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2d3d" text-anchor="middle">会話継続</text>
+<text x="130" y="709.0" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">backend-synth-complete</text>
+<text x="130" y="730.6" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">force-new-message</text>
+<text x="130" y="752.2" font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#34495e" text-anchor="middle">通常会話へ復帰</text>
+  </g>
+
+  <line x1="1060" y1="330" x2="1010" y2="330" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="1130" y1="385" x2="990" y2="645" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="805" y1="705" x2="775" y2="705" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="530" y1="705" x2="500" y2="705" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="260" y1="705" x2="240" y2="705" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="70" y="815" width="1140" height="55" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="1.5"/>
+    <text x="90" y="848" font-family="Arial, sans-serif" font-size="17" fill="#1f2d3d">
+      確認済み: RAG対象質問で通常LLMをスキップ / 正しい設定値を回答 / 短文TTS化 / RAG後に通常会話へ復帰
+    </text>
+  </g>
+</svg>
