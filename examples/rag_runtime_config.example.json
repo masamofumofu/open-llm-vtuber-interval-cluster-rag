@@ -1,0 +1,7 @@
+﻿{
+  "enabled": true,
+  "model": "tinyswallow-vtuber:latest",
+  "base_url": "http://localhost:11434/v1",
+  "temperature": 0.2,
+  "max_tokens": 300
+}

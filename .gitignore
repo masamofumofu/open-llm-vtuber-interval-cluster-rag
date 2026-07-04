@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Logs
+logs/
+*.log
+rag_interval_cluster/logs/
+
+# Local documents / secrets
+rag_interval_cluster/docs/
+conf.yaml
+*.backup
+*.backup_*
+
+# Audio / generated files
+*.wav
+*.mp3
+*.ogg
+
+# OS
+.DS_Store
+Thumbs.db
