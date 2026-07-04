@@ -28,4 +28,10 @@ READMEから参照する場合は、以下を追加する。
 全体構成は以下を参照してください。
 
 - [docs/architecture_overview.md](docs/architecture_overview.md)
+
+## 理論的背景
+
+HIC-RAGの数理的な定式化については、以下を参照してください。
+
+- [階層的区間クラスタリングRAGの数学的定式化](hierarchical_interval_clustering_rag_paper_ja.md)
 ```

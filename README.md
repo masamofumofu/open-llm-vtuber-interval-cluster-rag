@@ -17,6 +17,19 @@
 8. Open-LLM-VTuber上での回答表示
 9. RAG回答の短文TTS化
 
+## まず読む
+
+HIC-RAGの考え方を理解するには、まず以下の順に読むことを推奨します。
+
+1. [構成図](docs/architecture_overview.md)  
+   Open-LLM-VTuberにHIC-RAGをどう組み込んでいるかを図で確認できます。
+
+2. [階層的区間クラスタリングRAGの数学的定式化](docs/hierarchical_interval_clustering_rag_paper_ja.md)  
+   HIC-RAGの理論的背景、区間距離、階層クラスタリング、信頼度ゲート、根拠制約付き生成について説明しています。
+
+3. [Open-LLM-VTuberへの組み込み手順](docs/implementation_notes.md)  
+   実際に `single_conversation.py` へ差し込む箇所と追加コードを説明しています。
+
 ## 背景
 
 ローカルLLM環境では、モデルサイズ、VRAM、CPU性能などの制約があります。  
@@ -28,7 +41,7 @@
 
 全体構成は以下を参照してください。
 
-- [docs/assets/architecture_overview.md](docs/assets/architecture_overview.md)
+- [docs/architecture_overview.md](docs/architecture_overview.md)
 
 ## 対象環境
 
@@ -92,11 +105,13 @@ open-llm-vtuber-interval-cluster-rag/
 
 - [docs/implementation_notes.md](docs/implementation_notes.md)
 
-## アーキテクチャ
+## アーキテクチャと理論背景
 
-技術構成の詳細は以下を参照してください。
+技術構成と理論背景は以下を参照してください。
 
-- [docs/architecture.md](docs/architecture.md)
+- [構成図](docs/architecture_overview.md)
+- [アーキテクチャ詳細](docs/architecture.md)
+- [階層的区間クラスタリングRAGの数学的定式化](docs/hierarchical_interval_clustering_rag_paper_ja.md)
 
 ## 動作確認結果
 
