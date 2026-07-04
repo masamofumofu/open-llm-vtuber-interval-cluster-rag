@@ -28,7 +28,7 @@
 
 全体構成は以下を参照してください。
 
-- [docs/architecture_overview.md](docs/architecture_overview.md)
+- [docs/assets/architecture_overview.md](docs/assets/architecture_overview.md)
 
 ## 対象環境
 
